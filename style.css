@@ -1,5 +1,8 @@
-html,
-body {
+* {
+	box-sizing: border-box;
+}
+
+html, body {
 	width: 100%;
 	min-height: 100%;
 	margin: 0;
@@ -7,10 +10,6 @@ body {
 
 :root {
 	--hero-offset: 54px;
-}
-
-* {
-	box-sizing: border-box;
 }
 
 body {
@@ -434,13 +433,34 @@ body {
 	}
 
 	.site-header nav a {
-		font-size: 9px;
+		font-size: 10px;
+	}
+
+	#video {
+		top: auto;
+		bottom: 0;
+		height: 40vh;
+		height: 40svh;
+	}
+
+	#video video {
+		object-position: 66% center;
+	}
+
+	#video-overlay {
+		background: linear-gradient(to bottom, #eeece8 0%, rgba(238, 236, 232, 0.82) 12%, rgba(238, 236, 232, 0) 58%);
 	}
 
 	.hero-content,
 	.inner-page {
 		min-height: calc(100vh - 52px);
-		padding: calc(11vh + var(--hero-offset)) 7vw 38px;
+		padding: clamp(30px, 6vh, 48px) 7vw 38px;
+	}
+
+	.hero-content {
+		min-height: calc(100svh - 52px);
+		padding-bottom: 38vh;
+		padding-bottom: 38svh;
 	}
 
 	.project-list {
@@ -471,7 +491,9 @@ body {
 	}
 
 	.intro h2 {
-		font-size: clamp(24px, 7vw, 29px);
+		max-width: 16ch;
+		font-size: clamp(23px, 6.5vw, 28px);
+		line-height: 1.12;
 	}
 
 	.desktop-break {
@@ -479,10 +501,22 @@ body {
 	}
 
 	.intro-copy {
-		max-width: 310px;
-		font-size: 10px;
+		max-width: 34ch;
+		font-size: 11px;
 	}
 
+}
+
+@media (max-width: 650px) and (max-height: 560px) {
+	#video {
+		height: 32vh;
+		height: 32svh;
+	}
+
+	.hero-content {
+		padding-bottom: 30vh;
+		padding-bottom: 30svh;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
